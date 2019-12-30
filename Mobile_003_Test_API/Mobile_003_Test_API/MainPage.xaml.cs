@@ -148,7 +148,6 @@ namespace Mobile_003_Test_API
                 // Преобразовать ответ и получить из него массив json-объектов (задач)
                 string httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
-                //JsonArray jsonArray = JsonArray.Parse(httpResponseBody);
                 List<TodoItem> todoItemList = JsonConvert.DeserializeObject<List<TodoItem>>(httpResponseBody);
 
                 // Перебрать полученный массив и создать из его элементов задачи - объекты класса TodoItem
