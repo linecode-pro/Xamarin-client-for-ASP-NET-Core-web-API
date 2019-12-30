@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Mobile_003_Test_API"
+             mc:Ignorable="d"
+             x:Class="Mobile_003_Test_API.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <!-- Place new controls here -->
+            <!--<Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />-->
+
+
+            <StackLayout Orientation="Vertical" Margin="12">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="E-Mail" TextColor="Green" WidthRequest="75" VerticalOptions="Center"/>
+                    <Entry x:Name="userEmailBox" Placeholder="E-Mail" WidthRequest="150" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Password" TextColor="Green" WidthRequest="75" VerticalOptions="Center"/>
+                    <Entry x:Name="userPasswordBox" Placeholder="Password" WidthRequest="150" VerticalOptions="Center" IsPassword="True" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  Margin="12">
+                <Label Text="Authentication string" TextColor="Green" />
+                <Entry x:Name="connectionAuthenticationStringBox" Placeholder="Authentication string" />
+                <Label Text="API string" TextColor="Green" />
+                <Entry x:Name="connectionAPIStringBox" Placeholder="API string" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  Margin="12">
+                <Label Text="Token" TextColor="Green" />
+                <Label x:Name="tokenStringBox" LineBreakMode="WordWrap" MaxLines="2"/>
+                <Label Text="Response" TextColor="Green" />
+                <Label x:Name="responseStringBox" LineBreakMode="WordWrap" MaxLines="2"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Get Token" Clicked="Button_GetToken_Clicked" />
+                <Button Text="Get tasks list using Token" Clicked="Button_GetTasksListUsingToken_Clicked"/>
+            </StackLayout>
+
+            <ListView x:Name="todoListView" Header="Todo Items" Margin="12" HasUnevenRows="true" BackgroundColor="AntiqueWhite" HeightRequest="150">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:TodoItem">
+                        <ViewCell>
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="{Binding Id}"/>
+                                <Label Grid.Column="1" Text="{Binding Name}"/>
+                                <Label Grid.Column="2" Text="{Binding Description}"/>
+                                <Label Grid.Column="3" Text="{Binding IsComplete}"/>
+                                <Label Grid.Column="4" Text="{Binding UserId}"/>
+                                <Label Grid.Column="5" Text="{Binding CreationDate}"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Vertical" Margin="12">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Name" TextColor="Green" WidthRequest="75" VerticalOptions="Center"/>
+                    <Entry x:Name="newTodoNameBox" Placeholder="Name" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Description" TextColor="Green" WidthRequest="75" VerticalOptions="Center"/>
+                    <Entry x:Name="newTodoDescriptionBox" Placeholder="Description" WidthRequest="75" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <Button Text="Add new Todo item" Margin="12" HorizontalOptions="Center" Clicked="Button_AddNewTodoItem_Clicked" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
