@@ -94,7 +94,6 @@ namespace Mobile_003_Test_API
             {
                 return ex.ToString();
             }
- 
         }
 
         private string CreateAnswerResponseText(HttpResponseMessage response)
@@ -235,20 +234,16 @@ namespace Mobile_003_Test_API
                 responseStringBox.Text = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
                 return "Error!";
             }
-
         }
-
     }
 
     public class TodoItem
     {
         public int Id { get; set; } // идентификатор задачи
-
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public bool IsComplete { get; set; }
+        public string Name { get; set; } // название задачи
+        public string Description { get; set; } // описание задачи
+        public bool IsComplete { get; set; } // признак выполнена задача или нет
         public string UserId { get; set; } // идентификатор пользователя
-
         public DateTime CreationDate { get; set; } // дата создания задачи
     }
 }
