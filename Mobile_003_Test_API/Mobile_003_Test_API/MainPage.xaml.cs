@@ -157,8 +157,8 @@ namespace Mobile_003_Test_API
                     TodoItemsCollection.Add(todoItem);
                 }
 
-                //BindingContext = this;
                 todoListView.ItemsSource = TodoItemsCollection;
+
                 return "Ok!";
             }
             catch (Exception ex)
@@ -224,7 +224,6 @@ namespace Mobile_003_Test_API
                 // Преобразовать ответ и получить из него json-объект (новую, только что созданную на веб-сервере задачу)
                 string httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
-                //JsonObject jsonObject = JsonObject.Parse(httpResponseBody);
                 TodoItem todoItem = JsonConvert.DeserializeObject<TodoItem>(httpResponseBody);
 
                 TodoItemsCollection.Add(todoItem);
