@@ -120,6 +120,9 @@ namespace Mobile_003_Test_API
 
         public async Task<string> GetTasksListUsingTokenAsync(string access_token)
         {
+            // Для учебных целей возьмём строку токена из поля ввода
+            connectionAPIString = connectionAPIStringBox.Text.Trim();
+
             // Очистить коллекцию задач
             TodoItemsCollection.Clear();
 
