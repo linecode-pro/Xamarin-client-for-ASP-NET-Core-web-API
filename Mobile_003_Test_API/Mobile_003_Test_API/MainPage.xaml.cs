@@ -70,7 +70,7 @@ namespace Mobile_003_Test_API
                 // Выполнить подключение к API, используя метод POST
                 HttpResponseMessage response = await client.PostAsync(connectionAuthenticationString, content);
 
-                // Отобразить текст ответа на странице UWP-приложения
+                // Отобразить текст ответа на странице приложения
                 responseStringBox.Text = CreateAnswerResponseText(response);
 
                 // Проверить, что получен правильный ответ от сервера
@@ -139,7 +139,7 @@ namespace Mobile_003_Test_API
                 Uri requestUri = new Uri(connectionAPIString);
                 HttpResponseMessage httpResponse = await client.GetAsync(requestUri);
 
-                // Отобразить текст ответа на странице UWP-приложения
+                // Отобразить текст ответа на странице приложения
                 responseStringBox.Text = CreateAnswerResponseText(httpResponse);
 
                 // Проверить, что получен правильнй ответ от сервера
@@ -151,7 +151,7 @@ namespace Mobile_003_Test_API
                 List<TodoItem> todoItemList = JsonConvert.DeserializeObject<List<TodoItem>>(httpResponseBody);
 
                 // Перебрать полученный массив и создать из его элементов задачи - объекты класса TodoItem
-                // Созданные объекты - поместить в коллекцию (для отображения на странице нашего UWP-приложения)
+                // Созданные объекты - поместить в коллекцию (для отображения на странице нашего приложения)
                 foreach (var todoItem in todoItemList)
                 {  
                     TodoItemsCollection.Add(todoItem);
@@ -215,7 +215,7 @@ namespace Mobile_003_Test_API
                 Uri requestUri = new Uri(connectionAPIString);
                 HttpResponseMessage httpResponse = await client.PostAsync(requestUri, content);
 
-                // Отобразить текст ответа на странице UWP-приложения
+                // Отобразить текст ответа на странице приложения
                 responseStringBox.Text = CreateAnswerResponseText(httpResponse);
 
                 // Проверить, что получен правильнй ответ от сервера
