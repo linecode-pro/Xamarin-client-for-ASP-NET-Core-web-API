@@ -111,7 +111,7 @@ namespace Mobile_003_Test_API
             // Для учебных целей возьмём строку токена из поля ввода
             tokenString = tokenStringBox.Text.Trim();
 
-            // Получить список задач, используюя полученный токен
+            // Получить список задач, используя полученный токен
             if (!String.IsNullOrEmpty(tokenString))
             {
                 string result = await GetTasksListUsingTokenAsync(tokenString);
@@ -120,7 +120,7 @@ namespace Mobile_003_Test_API
 
         public async Task<string> GetTasksListUsingTokenAsync(string access_token)
         {
-            // Для учебных целей возьмём строку токена из поля ввода
+            // Для учебных целей возьмём строку подключения из поля ввода
             connectionAPIString = connectionAPIStringBox.Text.Trim();
 
             // Очистить коллекцию задач
@@ -181,7 +181,7 @@ namespace Mobile_003_Test_API
             // Для учебных целей возьмём строку токена из поля ввода
             tokenString = tokenStringBox.Text.Trim();
 
-            // Получить список задач, используюя полученный токен
+            // Получить список задач, используя полученный токен
             if (!String.IsNullOrEmpty(tokenString))
             {
                 string result = await AddNewTodoItemUsingTokenAsync(tokenString, newTodoName, newTodoDescription);
