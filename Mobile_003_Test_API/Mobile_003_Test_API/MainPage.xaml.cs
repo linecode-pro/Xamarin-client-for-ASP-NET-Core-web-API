@@ -194,7 +194,7 @@ namespace Mobile_003_Test_API
 
             HttpClient client = new HttpClient();
 
-            //Добавить заголовок в наш GET-запрос, в котором прописать полученный ранее токен 
+            //Добавить заголовок в наш POST-запрос, в котором прописать полученный ранее токен 
             var headers = client.DefaultRequestHeaders;
             headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", access_token);
 
